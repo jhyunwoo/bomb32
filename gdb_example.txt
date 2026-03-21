@@ -1,0 +1,25 @@
+# Phase 1 분석을 위한 GDB 명령어 예제
+# 사용법: gdb -x gdb_example.txt bomb
+
+# Phase 1에 브레이크포인트 설정
+break phase_1
+
+# explode_bomb에도 설정 (폭발 방지용)
+break explode_bomb
+
+# 프로그램 실행
+run
+
+# Phase 1 디스어셈블
+disassemble
+
+# 첫 번째 인자 (입력 문자열) 확인
+print (char*)$rdi
+
+# 비교될 문자열이 있는 주소 찾기 (예시)
+# x/s 명령어로 메모리의 문자열 확인
+info registers
+
+# 계속 실행하려면 continue 입력
+echo \n=== 분석을 계속하려면 'continue'를 입력하세요 ===\n
+

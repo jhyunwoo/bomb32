@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  bomb:
+    build:
+      context: .
+      platform: linux/amd64  # x86-64 플랫폼 명시 (ARM Mac 호환)
+    image: bomb32:isolated
+    container_name: bomb32_isolated
+    platform: linux/amd64  # 실행 시에도 플랫폼 명시
+    network_mode: "none"  # 완전 네트워크 격리
+    read_only: false  # 프로그램 실행을 위해 쓰기 가능하도록 설정
+    stdin_open: true
+    tty: true
+
